@@ -1,0 +1,116 @@
+1704106821: mosquitto version 2.0.18 starting
+1704106821: Config loaded from /etc/mosquitto/mosquitto.conf.
+1704106821: Opening ipv4 listen socket on port 1883.
+1704106821: Opening websockets listen socket on port 8080.
+1704106821: mosquitto version 2.0.18 running
+1704106824: New client connected from 172.19.0.7:59085 as auto-CF1F9038-179F-B0C6-BBD8-4C66278F7737 (p2, c1, k60).
+1704106824: auto-CF1F9038-179F-B0C6-BBD8-4C66278F7737 0 myroom
+1704106873: Client auto-CF1F9038-179F-B0C6-BBD8-4C66278F7737 closed its connection.
+1704106875: mosquitto version 2.0.18 terminating
+1704106875: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1704126966: mosquitto version 2.0.18 starting
+1704126966: Config loaded from /etc/mosquitto/mosquitto.conf.
+1704126966: Opening ipv4 listen socket on port 1883.
+1704126966: Opening websockets listen socket on port 8080.
+1704126966: mosquitto version 2.0.18 running
+1704126970: New client connected from 172.21.0.7:49137 as auto-F929FA92-FC35-71E3-ABAA-DC8F08555518 (p2, c1, k60).
+1704126970: auto-F929FA92-FC35-71E3-ABAA-DC8F08555518 0 myroom
+1704126998: Client auto-F929FA92-FC35-71E3-ABAA-DC8F08555518 closed its connection.
+1704127000: mosquitto version 2.0.18 terminating
+1704127000: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1704127016: mosquitto version 2.0.18 starting
+1704127016: Config loaded from /etc/mosquitto/mosquitto.conf.
+1704127016: Opening ipv4 listen socket on port 1883.
+1704127016: Opening websockets listen socket on port 8080.
+1704127016: mosquitto version 2.0.18 running
+1704127020: New client connected from 172.21.0.7:56409 as auto-06E91E55-1789-929D-8C9A-28BC14FD69B8 (p2, c1, k60).
+1704127020: auto-06E91E55-1789-929D-8C9A-28BC14FD69B8 0 myroom
+1704127749: New client connected from 172.21.0.4:50429 as auto-3209715A-06E2-C5E7-CFEE-7E1A1B9C7A2D (p2, c1, k5).
+1704127752: New client connected from 172.21.0.4:50199 as auto-00E76BFB-736A-3B8F-4F0E-B7484F47FF9F (p2, c1, k5).
+1704127760: Client auto-00E76BFB-736A-3B8F-4F0E-B7484F47FF9F closed its connection.
+1704127820: New client connected from 172.21.0.4:49891 as auto-B15310B0-1FD5-DB0D-E398-B11BE0BB3EC5 (p2, c1, k5).
+1704127820: Client auto-B15310B0-1FD5-DB0D-E398-B11BE0BB3EC5 closed its connection.
+1704127870: New client connected from 172.21.0.4:41447 as auto-E28CF156-D9C5-907A-4B15-5E129F658289 (p2, c1, k5).
+1704127870: Client auto-E28CF156-D9C5-907A-4B15-5E129F658289 closed its connection.
+1704127920: New client connected from 172.21.0.4:60079 as auto-D39DB17D-4C28-31DC-6DE8-6B956D5DF922 (p2, c1, k5).
+1704127920: Client auto-D39DB17D-4C28-31DC-6DE8-6B956D5DF922 closed its connection.
+1704127970: New client connected from 172.21.0.4:39417 as auto-A800A46B-A019-1632-7070-971591B5D633 (p2, c1, k5).
+1704127970: Client auto-A800A46B-A019-1632-7070-971591B5D633 closed its connection.
+1704128020: New client connected from 172.21.0.4:40655 as auto-2028D030-D078-DFAE-BC47-609D3FFB6FC4 (p2, c1, k5).
+1704128020: Client auto-2028D030-D078-DFAE-BC47-609D3FFB6FC4 closed its connection.
+1704128095: New client connected from 172.21.0.4:42173 as auto-AD972758-3CC2-E819-F117-6A4209CBDC56 (p2, c1, k5).
+1704128095: Client auto-AD972758-3CC2-E819-F117-6A4209CBDC56 closed its connection.
+1704128121: New client connected from 172.21.0.4:41563 as auto-2B6FC161-37BF-E0BF-B853-30DDAA577F7C (p2, c1, k10).
+1704128121: auto-2B6FC161-37BF-E0BF-B853-30DDAA577F7C 0 DIRECTUS
+1704128291: Client auto-2B6FC161-37BF-E0BF-B853-30DDAA577F7C closed its connection.
+1704128292: New client connected from 172.21.0.4:34383 as auto-DF7A6413-4418-B5BA-FF59-FBABC612F5D3 (p2, c1, k10).
+1704128292: auto-DF7A6413-4418-B5BA-FF59-FBABC612F5D3 0 DIRECTUS
+1704128386: Client auto-DF7A6413-4418-B5BA-FF59-FBABC612F5D3 closed its connection.
+1704128387: New client connected from 172.21.0.4:43543 as auto-5A8BDD9D-8A44-8277-0359-9C27CEB85CA3 (p2, c1, k10).
+1704128387: auto-5A8BDD9D-8A44-8277-0359-9C27CEB85CA3 0 DIRECTUS
+1704128473: Client auto-5A8BDD9D-8A44-8277-0359-9C27CEB85CA3 closed its connection.
+1704128474: New client connected from 172.21.0.4:59301 as auto-1F607A8D-AF94-F67A-A416-246C6B6009F4 (p2, c1, k10).
+1704128474: auto-1F607A8D-AF94-F67A-A416-246C6B6009F4 0 DIRECTUS_XXX
+1704128510: Client auto-1F607A8D-AF94-F67A-A416-246C6B6009F4 closed its connection.
+1704128510: Client auto-3209715A-06E2-C5E7-CFEE-7E1A1B9C7A2D closed its connection.
+1704128512: New client connected from 172.21.0.4:56173 as auto-1C78A34A-0B27-3CDB-D250-F09334E00659 (p2, c1, k10).
+1704128512: auto-1C78A34A-0B27-3CDB-D250-F09334E00659 0 DIRECTUS_XXX
+1704128513: New client connected from 172.21.0.4:41551 as auto-56CA6202-443A-8A9A-8BE4-9C281B4943E6 (p2, c1, k10).
+1704128513: auto-56CA6202-443A-8A9A-8BE4-9C281B4943E6 0 DIRECTUS_XXX
+1704128691: Client auto-56CA6202-443A-8A9A-8BE4-9C281B4943E6 closed its connection.
+1704128692: New client connected from 172.21.0.4:46155 as auto-CEDD1D2D-8F1A-07B9-9AC6-5F158F564709 (p2, c1, k10).
+1704128692: auto-CEDD1D2D-8F1A-07B9-9AC6-5F158F564709 0 DIRECTUS_XXX
+1704128817: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1704128995: Client auto-CEDD1D2D-8F1A-07B9-9AC6-5F158F564709 closed its connection.
+1704128996: New client connected from 172.21.0.4:59491 as auto-EBC744C9-535A-1CBD-001E-AE103A68F27B (p2, c1, k10).
+1704128996: auto-EBC744C9-535A-1CBD-001E-AE103A68F27B 0 DIRECTUS_XXX
+1704129008: Client auto-EBC744C9-535A-1CBD-001E-AE103A68F27B closed its connection.
+1704129009: New client connected from 172.21.0.4:49289 as auto-9C34DFC9-74E2-6966-9987-2DA3849CC191 (p2, c1, k10).
+1704129012: auto-9C34DFC9-74E2-6966-9987-2DA3849CC191 0 /hello
+1704129012: auto-9C34DFC9-74E2-6966-9987-2DA3849CC191 /hello
+1704129012: auto-9C34DFC9-74E2-6966-9987-2DA3849CC191 1 /hello
+1704129028: Client auto-9C34DFC9-74E2-6966-9987-2DA3849CC191 closed its connection.
+1704129029: Client auto-1C78A34A-0B27-3CDB-D250-F09334E00659 closed its connection.
+1704129032: New client connected from 172.21.0.4:33749 as auto-596D8955-8901-DD5C-D2FB-D3B5A77DE186 (p2, c1, k10).
+1704129033: New client connected from 172.21.0.4:52759 as auto-21D5BC67-498E-A57F-C1AA-04A3A1A13955 (p2, c1, k10).
+1704129092: Client auto-21D5BC67-498E-A57F-C1AA-04A3A1A13955 closed its connection.
+1704129093: New client connected from 172.21.0.4:60057 as auto-B3B5A1E4-A1AD-7C9E-1155-BC4047EE1D1C (p2, c1, k10).
+1704129097: Client auto-B3B5A1E4-A1AD-7C9E-1155-BC4047EE1D1C closed its connection.
+1704129097: Client auto-596D8955-8901-DD5C-D2FB-D3B5A77DE186 closed its connection.
+1704129099: New client connected from 172.21.0.4:54519 as auto-505406D5-5138-F258-4140-E3EFF75BFC88 (p2, c1, k10).
+1704129101: New client connected from 172.21.0.4:34281 as auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 (p2, c1, k10).
+1704129166: auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 0 /hello
+1704129245: auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 /hello
+1704129251: auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 1 /by
+1704129257: auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 /by
+1704129262: auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 1 /bye
+1704129525: auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 /bye
+1704129863: Client auto-2E3683DD-63DC-6FAA-9BE5-947EF95ADEB6 closed its connection.
+1704129865: New client connected from 172.21.0.4:39707 as auto-F806E720-293E-636C-D142-24A629D2C5B4 (p2, c1, k10).
+1704129871: Client auto-F806E720-293E-636C-D142-24A629D2C5B4 closed its connection.
+1704129872: New client connected from 172.21.0.4:58295 as auto-E51B974E-F2A1-716B-2F7C-A54922159334 (p2, c1, k10).
+1704129882: Client auto-E51B974E-F2A1-716B-2F7C-A54922159334 closed its connection.
+1704129883: Client auto-505406D5-5138-F258-4140-E3EFF75BFC88 closed its connection.
+1704129887: New client connected from 172.21.0.4:48743 as auto-0E941ED4-8192-9A09-9005-0D51611242DD (p2, c1, k10).
+1704129888: New client connected from 172.21.0.4:49885 as auto-73FE753A-D644-CB00-1B6B-C3EB1AE926F9 (p2, c1, k10).
+1704129930: auto-73FE753A-D644-CB00-1B6B-C3EB1AE926F9 0 /hello
+1704129996: Client auto-73FE753A-D644-CB00-1B6B-C3EB1AE926F9 closed its connection.
+1704129996: Client auto-06E91E55-1789-929D-8C9A-28BC14FD69B8 closed its connection.
+1704129996: Client auto-0E941ED4-8192-9A09-9005-0D51611242DD closed its connection.
+1704129998: mosquitto version 2.0.18 terminating
+1704129998: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1704130023: mosquitto version 2.0.18 starting
+1704130023: Config loaded from /etc/mosquitto/mosquitto.conf.
+1704130023: Opening ipv4 listen socket on port 1883.
+1704130023: Opening websockets listen socket on port 8080.
+1704130023: mosquitto version 2.0.18 running
+1704130027: New client connected from 172.22.0.6:48281 as auto-86507F1B-261D-90C5-801E-0BD7516C16C8 (p2, c1, k10).
+1704130030: New client connected from 172.22.0.6:58929 as auto-1AC7589C-655C-E172-09DA-00E577F48054 (p2, c1, k10).
+1704130032: New client connected from 172.22.0.7:56755 as auto-294B8379-8EDE-2BA7-D4A6-AD7DA4370D51 (p2, c1, k60).
+1704130032: auto-294B8379-8EDE-2BA7-D4A6-AD7DA4370D51 0 myroom
+1704130056: auto-1AC7589C-655C-E172-09DA-00E577F48054 0 /blimey
+1704130279: Client auto-1AC7589C-655C-E172-09DA-00E577F48054 closed its connection.
+1704130280: Client auto-294B8379-8EDE-2BA7-D4A6-AD7DA4370D51 closed its connection.
+1704130280: Client auto-86507F1B-261D-90C5-801E-0BD7516C16C8 closed its connection.
+1704130281: mosquitto version 2.0.18 terminating
+1704130281: Saving in-memory database to /mosquitto/data//mosquitto.db.
