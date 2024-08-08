@@ -26,4 +26,4 @@ RUN /env/bin/pip3 install -r /env/requirements.txt
 
 RUN /env/bin/pip3 freeze
 
-CMD ["gunicorn"  , "--bind", "0.0.0.0:8010", "wsgi:application" , "--reload"]
+CMD ["gunicorn"  , "--bind", "0.0.0.0:5010", "wsgi:application" , "--reload"]
