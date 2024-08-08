@@ -29,15 +29,17 @@ services:
             - mqtt-net
     jupyter:
        container_name: jupyter_container
-      image: jupyter_image
+       image: jupyter_image
+       restart: always
        build:
-          context: ./jupyter
-          dockerfile: Dockerfile
+            context: ./jupyter
+            dockerfile: Dockerfile
        ports:
-          - "8889:8888"
+       - "8889:8888"
        volumes:
           - /home/andrewcgaitskell/home_data/jupyter:/home/jovyan/work
-       command: start-notebook.py --NotebookApp.token='my-token'
+       networks:
+            - mqtt-net
                 
 #    nodejs:
 #        container_name: ${COMPOSE_PROJECT_NAME}_${NODEJS_SERVER_NAME}
