@@ -1,3 +1,3 @@
-FROM node:14.17.3-alpine3.14
+FROM node:22.6-bookworm
 WORKDIR /home/node/project
 CMD ['npm','start']
