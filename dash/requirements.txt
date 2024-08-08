@@ -14,7 +14,7 @@ pandas
 plotly>=5.17.0
 pycparser>=2.21
 PyMySQL>=1.1.0
-python-dateutils>=2.8.2
+python-dateutil>=2.8.2
 python-dotenv>=1.0.0
 pytz
 redis>=5.0.1
