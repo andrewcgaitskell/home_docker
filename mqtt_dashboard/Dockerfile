@@ -1,9 +1,8 @@
-FROM ubuntu:latest
-USER root
+FROM node:22.6-bookworm
 RUN apt-get update
-RUN apt-get -y install curl gnupg
-RUN curl -sL https://deb.nodesource.com/setup_20.x  | bash -
-RUN apt-get -y install nodejs
+//RUN apt-get -y install curl gnupg
+//RUN curl -sL https://deb.nodesource.com/setup_20.x  | bash -
+//RUN apt-get -y install nodejs
 
 # Add a work directory
 WORKDIR /app
