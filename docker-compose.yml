@@ -63,7 +63,7 @@ services:
         build: ./mosquitto
         volumes:
            - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
-           - /home/andrewcgaitskell/Software/app/data/mosquitto/log:/mosquitto/log
+           - /home/andrewcgaitskell/home_data/app/data/mosquitto/log:/mosquitto/log
         ports:
             - "1883:1883"
             - "8080:8080"
@@ -73,7 +73,7 @@ services:
     flask:
         build: ./flask
         volumes:
-           - /home/andrewcgaitskell/Software/app/flask:/flask
+           - /home/andrewcgaitskell/home_data/app/flask:/flask
         stop_signal: SIGINT
         depends_on:
            - mosquitto
@@ -82,17 +82,17 @@ services:
         networks:
             - mqtt-net
 
-#    dash:
-#        build: ./dash
-#        volumes:
-#           - /home/andrewcgaitskell/Software/app/dash:/workdir
-#        stop_signal: SIGINT
-#        ports:
-#           - "5010:5010"
-#        depends_on:
-#           - mosquitto
-#        networks:
-#            - mqtt-net
+    dash:
+        build: ./dash
+        volumes:
+           - /home/andrewcgaitskell/home_data/app/dash:/workdir
+        stop_signal: SIGINT
+        ports:
+           - "5010:5010"
+        depends_on:
+           - mosquitto
+        networks:
+            - mqtt-net
            
 #mqtt_dashboard:
 #        container_name: mqtt_dashboard_container
