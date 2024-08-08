@@ -22,6 +22,8 @@ ENV HOST=0.0.0.0
 ENV CI=true
 
 CMD [ "node", "start" ]
+
+
 ###
 
 
@@ -30,16 +32,16 @@ CMD [ "node", "start" ]
 #COPY package.json .
 #COPY yarn.lock .
 #COPY package-lock.json .
-npm install --package-lock-only url-parse
+# npm install --package-lock-only url-parse
 
 #RUN yarn install
 #RUN npm ci
 
 # Copy app files
-#COPY . .
+# COPY . .
 
 # Expose port
-#EXPOSE 4000
+# EXPOSE 4000
 
 #ENV PORT=4000
 #ENV HOST=0.0.0.0
