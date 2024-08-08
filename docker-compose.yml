@@ -14,7 +14,7 @@ services:
          - TZ=Europe/London
        volumes:
           - /var/run/docker.sock:/var/run/docker.sock
-          - /home/andrewcgaitskell/Software/app/data/portainer:/data
+          - /home/andrewcgaitskell/home_data/portainer:/data
     mariadb:
         container_name: mariadb_container
         image: mariadb_image
@@ -24,7 +24,7 @@ services:
         ports:
         - "3306:3306"
         volumes:
-            - /home/andrewcgaitskell/Software/app/data/mariadb/:/var/lib/mysql
+            - /home/andrewcgaitskell/home_data/mariadb/:/var/lib/mysql
         networks:
             - mqtt-net
                 
@@ -39,7 +39,7 @@ services:
         environment:
             NODE_ENV: ${NODEJS_ENV}
         volumes:
-            - /home/andrewcgaitskell/Software/app/nodejs:/home/node/project
+            - /home/andrewcgaitskell/home_data/nodejs:/home/node/project
         working_dir: /home/node/project
         networks:
             - mqtt-net
@@ -50,7 +50,7 @@ services:
             context: ./reactjs
             dockerfile: Dockerfile
         volumes:
-            - /home/andrewcgaitskell/Software/app/data/reactjs/src:/app/src
+            - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
         ports:
            - "4000:4000"
         networks:
@@ -60,7 +60,7 @@ services:
         container_name: mosquitto
         build: ./mosquitto
         volumes:
-           - /home/andrewcgaitskell/Software/app/data/mosquitto/data:/mosquitto/data
+           - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
            - /home/andrewcgaitskell/Software/app/data/mosquitto/log:/mosquitto/log
         ports:
             - "1883:1883"
