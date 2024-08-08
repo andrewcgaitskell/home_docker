@@ -1,4 +1,4 @@
-FROM node:21-bookworm
+FROM node:22.6-bookworm
 ## AS development
 ENV NODE_ENV development
 
@@ -8,7 +8,8 @@ WORKDIR /app
 # Cache and Install dependencies
 COPY package.json .
 #COPY yarn.lock .
-COPY package-lock.json .
+#COPY package-lock.json .
+npm install --package-lock-only url-parse
 
 #RUN yarn install
 RUN npm ci
