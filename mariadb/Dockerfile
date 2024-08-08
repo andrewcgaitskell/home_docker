@@ -1,4 +1,4 @@
-FROM mariadb:10.11
+FROM mariadb:latest
 
 RUN apt-get update
 RUN apt-get update
@@ -17,4 +17,4 @@ env MARIADB_DATABASE=data
 
 EXPOSE 3306
 
-CMD ["mysqld"]
+CMD ["mariadbd"]
