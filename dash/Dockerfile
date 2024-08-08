@@ -1,4 +1,4 @@
-FROM python:3.11.4-bullseye
+FROM python:3.12.5-bookworm
 
 RUN apt-get update && apt-get -y install vim
 RUN apt-get -y install unzip
@@ -25,9 +25,5 @@ COPY requirements.txt /env/requirements.txt
 RUN /env/bin/pip3 install -r /env/requirements.txt
 
 RUN /env/bin/pip3 freeze
-#COPY . /workdir/.
-##RUN ls -R /workdir/
-##EXPOSE 8010:8010
 
 CMD ["gunicorn"  , "--bind", "0.0.0.0:8010", "wsgi:application" , "--reload"]
-##CMD [ "gunicorn", "wsgi:application", "--reload"]
