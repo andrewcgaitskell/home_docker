@@ -85,7 +85,7 @@ services:
     dash:
         build: ./dash
         volumes:
-           - /home/andrewcgaitskell/home_data/app/dash:/workdir
+           - /home/andrewcgaitskell/home_docker/dash/:/workdir
         stop_signal: SIGINT
         ports:
            - "5010:5010"
