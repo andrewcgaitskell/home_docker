@@ -56,30 +56,30 @@ services:
 #        networks:
 #            - mqtt-net
 
-#    mosquitto:
-#        image: eclipse-mosquitto
-#        container_name: mosquitto
-#        build: ./mosquitto
-#        volumes:
-#           - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
-#           - /home/andrewcgaitskell/Software/app/data/mosquitto/log:/mosquitto/log
-#        ports:
-#            - "1883:1883"
-#            - "8080:8080"
-#        networks:
-#            - mqtt-net
+    mosquitto:
+        image: eclipse-mosquitto
+        container_name: mosquitto
+        build: ./mosquitto
+        volumes:
+           - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
+           - /home/andrewcgaitskell/Software/app/data/mosquitto/log:/mosquitto/log
+        ports:
+            - "1883:1883"
+            - "8080:8080"
+        networks:
+            - mqtt-net
 
-#    flask:
-#        build: ./flask
-#        volumes:
-#           - /home/andrewcgaitskell/Software/app/flask:/flask
-#        stop_signal: SIGINT
-#        depends_on:
-#           - mosquitto
-#        ports:
-#           - "5000:5000"
-#        networks:
-#            - mqtt-net
+    flask:
+        build: ./flask
+        volumes:
+           - /home/andrewcgaitskell/Software/app/flask:/flask
+        stop_signal: SIGINT
+        depends_on:
+           - mosquitto
+        ports:
+           - "5000:5000"
+        networks:
+            - mqtt-net
 
 #    dash:
 #        build: ./dash
