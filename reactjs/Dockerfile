@@ -10,7 +10,6 @@ COPY package.json .
 
 USER node
 
-RUN npm ci
 RUN npm install --package-lock-only url-parse
 
 COPY --chown=node:node . .
