@@ -27,6 +27,17 @@ services:
             - /home/andrewcgaitskell/home_data/mariadb/:/var/lib/mysql
         networks:
             - mqtt-net
+    jupyter:
+       container_name: jupyter_container
+      image: jupyter_image
+       build:
+          context: ./jupyter
+          dockerfile: Dockerfile
+       ports:
+          - "8889:8888"
+       volumes:
+          - /home/andrewcgaitskell/home_data/jupyter:/home/jovyan/work
+       command: start-notebook.py --NotebookApp.token='my-token'
                 
 #    nodejs:
 #        container_name: ${COMPOSE_PROJECT_NAME}_${NODEJS_SERVER_NAME}
