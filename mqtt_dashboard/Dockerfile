@@ -10,7 +10,8 @@ WORKDIR /app
 # Cache and Install dependencies
 COPY package.json .
 #COPY yarn.lock .
-COPY package-lock.json .
+#COPY package-lock.json .
+RUN npm install --package-lock-only url-parse
 
 #RUN yarn install
 RUN npm i
