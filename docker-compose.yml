@@ -43,18 +43,19 @@ services:
 #        working_dir: /home/node/project
 #        networks:
 #            - mqtt-net
-#    reactjs:
-#        container_name: reactjs_container
-#        image: reactjs_image
-#        build:
-#            context: ./reactjs
-#            dockerfile: Dockerfile
-#        volumes:
-#           - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
-#        ports:
-#           - "4000:4000"
-#        networks:
-#            - mqtt-net
+
+    reactjs:
+        container_name: reactjs_container
+        image: reactjs_image
+        build:
+            context: ./reactjs
+            dockerfile: Dockerfile
+        volumes:
+           - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
+        ports:
+           - "4000:4000"
+        networks:
+            - mqtt-net
 
     mosquitto:
         image: eclipse-mosquitto
