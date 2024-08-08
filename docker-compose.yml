@@ -28,67 +28,70 @@ services:
         networks:
             - mqtt-net
                 
-    nodejs:
-        container_name: ${COMPOSE_PROJECT_NAME}_${NODEJS_SERVER_NAME}
-        image: ${NODEJS_CONTAINER_IMAGE}
-        user: ${NODEJS_USER}
-        command: ${NODEJS_COMMAND}
-        build: ./nodejs
-        ports:
-        - "4001:4001"
-        environment:
-            NODE_ENV: ${NODEJS_ENV}
-        volumes:
-            - /home/andrewcgaitskell/home_data/nodejs:/home/node/project
-        working_dir: /home/node/project
-        networks:
-            - mqtt-net
-    reactjs:
-        container_name: reactjs_container
-        image: reactjs_image
-        build:
-            context: ./reactjs
-            dockerfile: Dockerfile
-        volumes:
-            - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
-        ports:
-           - "4000:4000"
-        networks:
-            - mqtt-net
-    mosquitto:
-        image: eclipse-mosquitto
-        container_name: mosquitto
-        build: ./mosquitto
-        volumes:
-           - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
-           - /home/andrewcgaitskell/Software/app/data/mosquitto/log:/mosquitto/log
-        ports:
-            - "1883:1883"
-            - "8080:8080"
-        networks:
-            - mqtt-net
-    flask:
-        build: ./flask
-        volumes:
-           - /home/andrewcgaitskell/Software/app/flask:/flask
-        stop_signal: SIGINT
-        depends_on:
-           - mosquitto
-        ports:
-           - "5000:5000"
-        networks:
-            - mqtt-net
-    dash:
-        build: ./dash
-        volumes:
-           - /home/andrewcgaitskell/Software/app/dash:/workdir
-        stop_signal: SIGINT
-        ports:
-           - "5010:5010"
-        depends_on:
-           - mosquitto
-        networks:
-            - mqtt-net
+#    nodejs:
+#        container_name: ${COMPOSE_PROJECT_NAME}_${NODEJS_SERVER_NAME}
+#        image: ${NODEJS_CONTAINER_IMAGE}
+#        user: ${NODEJS_USER}
+#        command: ${NODEJS_COMMAND}
+#        build: ./nodejs
+#        ports:
+#        - "4001:4001"
+#        environment:
+#            NODE_ENV: ${NODEJS_ENV}
+#        volumes:
+#            - /home/andrewcgaitskell/home_data/nodejs:/home/node/project
+#        working_dir: /home/node/project
+#        networks:
+#            - mqtt-net
+#    reactjs:
+#        container_name: reactjs_container
+#        image: reactjs_image
+#        build:
+#            context: ./reactjs
+#            dockerfile: Dockerfile
+#        volumes:
+#           - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
+#        ports:
+#           - "4000:4000"
+#        networks:
+#            - mqtt-net
+
+#    mosquitto:
+#        image: eclipse-mosquitto
+#        container_name: mosquitto
+#        build: ./mosquitto
+#        volumes:
+#           - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
+#           - /home/andrewcgaitskell/Software/app/data/mosquitto/log:/mosquitto/log
+#        ports:
+#            - "1883:1883"
+#            - "8080:8080"
+#        networks:
+#            - mqtt-net
+
+#    flask:
+#        build: ./flask
+#        volumes:
+#           - /home/andrewcgaitskell/Software/app/flask:/flask
+#        stop_signal: SIGINT
+#        depends_on:
+#           - mosquitto
+#        ports:
+#           - "5000:5000"
+#        networks:
+#            - mqtt-net
+
+#    dash:
+#        build: ./dash
+#        volumes:
+#           - /home/andrewcgaitskell/Software/app/dash:/workdir
+#        stop_signal: SIGINT
+#        ports:
+#           - "5010:5010"
+#        depends_on:
+#           - mosquitto
+#        networks:
+#            - mqtt-net
            
 #mqtt_dashboard:
 #        container_name: mqtt_dashboard_container
