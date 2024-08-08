@@ -1,5 +1,5 @@
 gunicorn
-dash=
+dash
 dash-bootstrap-components>=1.5.0
 dash-core-components>=2.0.0
 dash-daq>=0.5.0
@@ -9,7 +9,7 @@ dnspython>=2.4.2
 email-validator>=2.0.0.post2
 Flask>=2.3.3
 mariadb>=1.1.7
-numpy>=1.26.0
+numpy
 pandas
 plotly>=5.17.0
 pycparser>=2.21
