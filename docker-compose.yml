@@ -104,12 +104,14 @@ services:
 #            - mqtt-net
 
     dash:
+        image: dash_image
+        container_name: dash_container
         build: ./dash
         volumes:
            - /home/andrewcgaitskell/home_docker/dash/:/workdir
         stop_signal: SIGINT
         ports:
-           - "5010:5010"
+           - "5015:5015"
         depends_on:
            - mosquitto
         networks:
