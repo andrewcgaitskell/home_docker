@@ -40,16 +40,17 @@ services:
        #     GID: ${GID}
        #     UID: ${UID}
        user:
-          "1000:1000"    
+          #"1000:1000"
+          "101000:101000"
        restart: always
        build:
             context: ./jupyter_2
             dockerfile: Dockerfile
             args:
                BUILD_ENV_USER : ${USER}
-               BUILD_ENV_USER_UID : ${UID}
-               BUILD_ENV_USER_GID : ${GID}
-               BUILD_ENV_GROUPID : 1001
+               BUILD_ENV_USER_UID : 101000
+               BUILD_ENV_USER_GID : 101000
+               BUILD_ENV_GROUPID : 101000
                BUILD_ENV_GROUPNAME : 'home_docker_group'
        environment:
              JUPYTER_ENABLE_LAB: "yes"
