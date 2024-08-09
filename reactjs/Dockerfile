@@ -13,7 +13,7 @@ COPY package.json /app/package.json
 RUN npm install --package-lock-only url-parse
 
 # Same as npm install
-# RUN npm ci
+RUN npm ci
 
 COPY ./src /app
 
