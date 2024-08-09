@@ -25,23 +25,23 @@ WORKDIR /workdir
 #RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USER}
 #RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USER}
 
-RUN echo groupadd --gid 101000 jupyter_group
-RUN groupadd --gid 101000 jupyter_group
-RUN echo useradd --uid 101000 --gid 101000 -m andrewcgaitskell
-RUN useradd --uid 101000 --gid 101000 -m andrewcgaitskell
+RUN echo groupadd --gid 1000 jupyter_group
+RUN groupadd --gid 1000 jupyter_group
+RUN echo useradd --uid 1000 --gid 1000 -m andrewcgaitskell
+RUN useradd --uid 1000 --gid 1000 -m andrewcgaitskell
 
-RUN chown -R 101000:101000 /workdir
+RUN chown -R 1000:1000 /workdir
 
-RUN mkdir /home/andrewcgaitskell/notebooks
+#RUN mkdir /home/andrewcgaitskell/notebooks
 #RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /home/andrewcgaitskell/notebooks
-RUN chown -R  101000:101000 /home/andrewcgaitskell/notebooks
+#RUN chown -R  1000:1000 /home/andrewcgaitskell/notebooks
 
 RUN mkdir /env
 #RUN chown ${ENV_USER_UID}:${ENV_USER_GID} /env
-RUN chown 101000:101000 /env
+RUN chown 1000:1000 /env
 
 #USER ${ENV_USER}
-USER 101000:101000
+USER 1000:1000
 
 ENV VIRTUAL_ENV=/env
 RUN python3 -m venv $VIRTUAL_ENV
