@@ -5,6 +5,7 @@ FROM node:lts AS development
 
 # Set working directory
 WORKDIR /app
+RUN mkdir /app/public
 
 # 
 COPY package.json /app/package.json
@@ -18,6 +19,7 @@ RUN npm install
 # RUN npm ci
 
 COPY ./src /app
+COPY ./public /app/public
 
 ENV CI=true
 ENV PORT=3000
