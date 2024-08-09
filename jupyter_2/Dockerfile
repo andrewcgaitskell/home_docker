@@ -30,6 +30,9 @@ RUN chown -R ${ENV_USER_UID}:${ENV_GROUPID} /workdir
 RUN mkdir /env
 RUN chown ${ENV_USER_UID}:${ENV_GROUPID} /env
 
+RUN mkdir /notebooks
+RUN chown ${ENV_USER_UID}:${ENV_GROUPID} /notebooks
+
 USER ${ENV_USER}
 
 ENV VIRTUAL_ENV=/env
