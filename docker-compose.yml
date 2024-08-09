@@ -6,6 +6,9 @@ networks:
 services:
     portainer:
        container_name: portainer
+       args:
+          GID: ${GID}
+          UID: ${UID}
        image: portainer/portainer-ce
        restart: always
        ports:
@@ -18,6 +21,9 @@ services:
     mariadb:
         container_name: mariadb_container
         image: mariadb_image
+        args:
+            GID: ${GID}
+            UID: ${UID}
         build:
             context: ./mariadb
             dockerfile: Dockerfile
@@ -30,8 +36,10 @@ services:
     jupyter:
        container_name: jupyter_container
        image: jupyter_image
+       args:
+            GID: ${GID}
+            UID: ${UID}
        restart: always
-       user: 1000:1001
        build:
             context: ./jupyter_2
             dockerfile: Dockerfile
@@ -74,6 +82,9 @@ services:
     reactjs:
         container_name: reactjs_container
         image: reactjs_image
+        args:
+            GID: ${GID}
+            UID: ${UID}
         build:
             context: ./reactjs
             dockerfile: Dockerfile
@@ -87,6 +98,9 @@ services:
     mosquitto:
         image: eclipse-mosquitto
         container_name: mosquitto
+        args:
+            GID: ${GID}
+            UID: ${UID}
         build: ./mosquitto
         volumes:
            - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
@@ -112,6 +126,9 @@ services:
     dash:
         image: dash_image
         container_name: dash_container
+        args:
+            GID: ${GID}
+            UID: ${UID}
         build: ./dash
         volumes:
            - /home/andrewcgaitskell/home_docker/dash/:/workdir
