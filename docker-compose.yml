@@ -31,6 +31,9 @@ services:
        container_name: jupyter_container
        image: jupyter_image
        restart: always
+       args:
+       - UID=$UID
+       - GID=$GID
        environment:
        - UID=${UID}
        - GID=${GID}
