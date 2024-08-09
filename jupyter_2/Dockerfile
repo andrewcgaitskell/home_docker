@@ -20,19 +20,20 @@ RUN apt-get install -y libmariadb-dev
 
 WORKDIR /workdir
 
-RUN echo groupadd --gid ${ENV_GROUPID} ${ENV_GROUPNAME}
-RUN groupadd --gid ${ENV_GROUPID} ${ENV_GROUPNAME}
-RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_GROUPID} -m ${ENV_USER}
-RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_GROUPID} -m ${ENV_USER}
+# RUN echo groupadd --gid ${ENV_GROUPID} ${ENV_GROUPNAME}
+# RUN groupadd --gid ${ENV_GROUPID} ${ENV_GROUPNAME}
+RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USER}
+RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USER}
 
-RUN chown -R ${ENV_USER_UID}:${ENV_GROUPID} /workdir
-
-RUN mkdir /env
-RUN chown ${ENV_USER_UID}:${ENV_GROUPID} /env
-
-USER ${ENV_USER}
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /workdir
 
 RUN mkdir /home/andrewcgaitskell/notebooks
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /home/andrewcgaitskell/notebooks
+
+RUN mkdir /env
+RUN chown ${ENV_USER_UID}:${ENV_USER_GID} /env
+
+USER ${ENV_USER}
 
 ENV VIRTUAL_ENV=/env
 RUN python3 -m venv $VIRTUAL_ENV
