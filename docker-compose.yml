@@ -46,8 +46,8 @@ services:
           - /home/andrewcgaitskell/home_data/jupyter:/home/jovyan/work
        networks:
             - mqtt-net
-       command:
-          start-notebook.py --NotebookApp.token='mytoken123'
+       #command:
+       #   start-notebook.py --NotebookApp.token='mytoken123'
                 
 #    nodejs:
 #        container_name: ${COMPOSE_PROJECT_NAME}_${NODEJS_SERVER_NAME}
