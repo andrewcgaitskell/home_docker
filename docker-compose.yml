@@ -31,6 +31,7 @@ services:
        container_name: jupyter_container
        image: jupyter_image
        restart: always
+       user: 1000:1001
        build:
             context: ./jupyter_2
             dockerfile: Dockerfile
@@ -43,7 +44,8 @@ services:
        environment:
              JUPYTER_ENABLE_LAB: "yes"
              JUPYTER_TOKEN: "docker"
-             JUPYTER_DATA_DIR: "/home/andrewcgaitskell/notebooks"
+             #JUPYTER_DATA_DIR: "/home/andrewcgaitskell/notebooks"
+             JUPYTER_NOTEBOOK_DIR: "/home/andrewcgaitskell/notebooks"
        ports:
        - "8888:8888"
        volumes:
