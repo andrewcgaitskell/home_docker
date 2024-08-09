@@ -40,7 +40,7 @@ services:
        #     GID: ${GID}
        #     UID: ${UID}
        user:
-          1000:1000
+          "1000:1000"    
        restart: always
        build:
             context: ./jupyter_2
@@ -54,6 +54,7 @@ services:
        environment:
              JUPYTER_ENABLE_LAB: "yes"
              JUPYTER_TOKEN: "docker"
+             DOCKER_DRIVER : "fuse-overlayfs"
              #JUPYTER_DATA_DIR: "/home/andrewcgaitskell/notebooks"
              #JUPYTER_NOTEBOOK_DIR: "/home/andrewcgaitskell/notebooks"
        ports:
