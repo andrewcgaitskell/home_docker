@@ -71,8 +71,8 @@ services:
         build:
             context: ./reactjs
             dockerfile: Dockerfile
-        volumes:
-           - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
+        #volumes:
+        #   - /home/andrewcgaitskell/home_data/reactjs/src:/app/src
         ports:
            - "4000:4000"
         networks:
