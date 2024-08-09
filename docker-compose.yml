@@ -98,9 +98,9 @@ services:
     mosquitto:
         image: eclipse-mosquitto
         container_name: mosquitto
-        args:
-            GID: ${GID}
-            UID: ${UID}
+        #args:
+        #    GID: ${GID}
+        #    UID: ${UID}
         build: ./mosquitto
         volumes:
            - /home/andrewcgaitskell/home_data/mosquitto/data:/mosquitto/data
