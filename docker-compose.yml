@@ -41,7 +41,7 @@ services:
                BUILD_ENV_GROUPID : 1001
                BUILD_ENV_GROUPNAME : 'home_docker_group'
        environment:
-            - JUPYTER_TOKEN : 'docker'
+            - JUPYTER_TOKEN : docker
        ports:
        - "8888:8888"
        volumes:
