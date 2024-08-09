@@ -5,7 +5,9 @@ FROM node:lts AS development
 
 # Set working directory
 WORKDIR /app
+
 RUN mkdir /app/public
+RUN mkdir /app/src
 
 # 
 COPY package.json /app/package.json
