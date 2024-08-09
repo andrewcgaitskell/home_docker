@@ -32,9 +32,9 @@ RUN useradd --uid 1000 --gid 1000 -m andrewcgaitskell
 
 RUN chown -R 1000:1000 /workdir
 
-#RUN mkdir /home/andrewcgaitskell/notebooks
+RUN mkdir /home/andrewcgaitskell/notebooks
 #RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /home/andrewcgaitskell/notebooks
-#RUN chown -R  1000:1000 /home/andrewcgaitskell/notebooks
+RUN chown -R  1000:1000 /home/andrewcgaitskell/notebooks
 
 RUN mkdir /env
 #RUN chown ${ENV_USER_UID}:${ENV_USER_GID} /env
@@ -59,6 +59,8 @@ RUN /env/bin/pip3 install -r /env/requirements.txt
 RUN /env/bin/pip3 freeze
 #COPY . /workdir/.
 ##RUN ls -R /workdir/
+
+VOLUME /home/andrewcgaitskell/notebooks
 
 EXPOSE 8888
 
