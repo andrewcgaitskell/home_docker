@@ -6,9 +6,9 @@ networks:
 services:
     portainer:
        container_name: portainer
-       args:
-          GID: ${GID}
-          UID: ${UID}
+       #args:
+       #   GID: ${GID}
+       #   UID: ${UID}
        image: portainer/portainer-ce
        restart: always
        ports:
@@ -21,9 +21,9 @@ services:
     mariadb:
         container_name: mariadb_container
         image: mariadb_image
-        args:
-            GID: ${GID}
-            UID: ${UID}
+        #args:
+        #    GID: ${GID}
+        #    UID: ${UID}
         build:
             context: ./mariadb
             dockerfile: Dockerfile
@@ -36,9 +36,9 @@ services:
     jupyter:
        container_name: jupyter_container
        image: jupyter_image
-       args:
-            GID: ${GID}
-            UID: ${UID}
+       #args:
+       #     GID: ${GID}
+       #     UID: ${UID}
        restart: always
        build:
             context: ./jupyter_2
@@ -53,7 +53,7 @@ services:
              JUPYTER_ENABLE_LAB: "yes"
              JUPYTER_TOKEN: "docker"
              #JUPYTER_DATA_DIR: "/home/andrewcgaitskell/notebooks"
-             JUPYTER_NOTEBOOK_DIR: "/home/andrewcgaitskell/notebooks"
+             #JUPYTER_NOTEBOOK_DIR: "/home/andrewcgaitskell/notebooks"
        ports:
        - "8888:8888"
        volumes:
@@ -82,9 +82,9 @@ services:
     reactjs:
         container_name: reactjs_container
         image: reactjs_image
-        args:
-            GID: ${GID}
-            UID: ${UID}
+        #args:
+        #    GID: ${GID}
+        #    UID: ${UID}
         build:
             context: ./reactjs
             dockerfile: Dockerfile
@@ -126,9 +126,9 @@ services:
     dash:
         image: dash_image
         container_name: dash_container
-        args:
-            GID: ${GID}
-            UID: ${UID}
+        #args:
+        #    GID: ${GID}
+        #    UID: ${UID}
         build: ./dash
         volumes:
            - /home/andrewcgaitskell/home_docker/dash/:/workdir
