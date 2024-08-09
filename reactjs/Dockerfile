@@ -15,7 +15,7 @@ COPY ./src/ /app/src
 COPY ./public/ /app/public
 
 #ENV CI=true
-ENV PORT=3000
+ENV PORT=4000
 
 CMD [ "npm", "start" ]
 
