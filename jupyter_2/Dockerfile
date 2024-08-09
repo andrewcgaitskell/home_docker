@@ -20,8 +20,8 @@ RUN apt-get install -y libmariadb-dev
 
 WORKDIR /workdir
 
-# RUN echo groupadd --gid ${ENV_GROUPID} ${ENV_GROUPNAME}
-# RUN groupadd --gid ${ENV_GROUPID} ${ENV_GROUPNAME}
+RUN echo groupadd --gid ${ENV_USER_GID} ${ENV_USER}
+RUN groupadd --gid ${ENV_USER_GID} ${ENV_USER}
 RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USER}
 RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USER}
 
