@@ -91,17 +91,17 @@ services:
         networks:
             - mqtt-net
 
-    flask:
-        build: ./flask
-        volumes:
-           - /home/andrewcgaitskell/home_data/app/flask:/flask
-        stop_signal: SIGINT
-        depends_on:
-           - mosquitto
-        ports:
-           - "5000:5000"
-        networks:
-            - mqtt-net
+#    flask:
+#        build: ./flask
+#        volumes:
+#           - /home/andrewcgaitskell/home_data/app/flask:/flask
+#        stop_signal: SIGINT
+#        depends_on:
+#           - mosquitto
+#        ports:
+#           - "5000:5000"
+#        networks:
+#            - mqtt-net
 
     dash:
         build: ./dash
