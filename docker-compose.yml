@@ -31,15 +31,15 @@ services:
        container_name: jupyter_container
        image: jupyter_image
        restart: always
-       args:
-            BUILD_ENV_USER=${USER}
-            BUILD_ENV_USER_UID=${UID}
-            BUILD_ENV_USER_GID=${UID}
-            BUILD_ENV_GROUPID=1001
-            BUILD_ENV_GROUPNAME=home_docker_group
        build:
             context: ./jupyter_2
             dockerfile: Dockerfile
+            args:
+               BUILD_ENV_USER=${USER}
+               BUILD_ENV_USER_UID=${UID}
+               BUILD_ENV_USER_GID=${UID}
+               BUILD_ENV_GROUPID=1001
+               BUILD_ENV_GROUPNAME=home_docker_group
        ports:
        - "8889:8888"
        volumes:
