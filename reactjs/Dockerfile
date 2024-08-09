@@ -18,7 +18,7 @@ RUN npm install
 # Same as npm install
 # RUN npm ci
 
-COPY ./src /app
+COPY ./src /app/src
 COPY ./public /app/public
 
 ENV CI=true
