@@ -39,6 +39,8 @@ services:
        #args:
        #     GID: ${GID}
        #     UID: ${UID}
+       user:
+          1000:1000
        restart: always
        build:
             context: ./jupyter_2
@@ -57,7 +59,7 @@ services:
        ports:
        - "8888:8888"
        volumes:
-          - /home/andrewcgaitskell/home_data/jupyter:/home/andrewcgaitskell/notebooks:rw,z
+          - /home/andrewcgaitskell/home_data/jupyter:/home/andrewcgaitskell/notebooks:z
        networks:
             - mqtt-net
        #command:
