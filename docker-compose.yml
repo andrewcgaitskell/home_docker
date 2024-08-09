@@ -43,7 +43,7 @@ services:
        ports:
        - "8888:8888"
        volumes:
-          - /home/andrewcgaitskell/home_data/jupyter:/home/andrewcgaitskell/jupyter
+          - /home/andrewcgaitskell/home_data/jupyter:/notebooks
        networks:
             - mqtt-net
        #command:
