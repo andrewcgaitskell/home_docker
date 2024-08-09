@@ -15,7 +15,7 @@ RUN npm install --package-lock-only url-parse
 # Same as npm install
 # RUN npm ci
 
-COPY . /app
+COPY ./src /app
 
 ENV CI=true
 ENV PORT=3000
