@@ -30,10 +30,9 @@ RUN chown -R ${ENV_USER_UID}:${ENV_GROUPID} /workdir
 RUN mkdir /env
 RUN chown ${ENV_USER_UID}:${ENV_GROUPID} /env
 
-RUN mkdir /notebooks
-RUN chown ${ENV_USER_UID}:${ENV_GROUPID} /notebooks
-
 USER ${ENV_USER}
+
+RUN mkdir /home/andrewcgaitskell/notebooks
 
 ENV VIRTUAL_ENV=/env
 RUN python3 -m venv $VIRTUAL_ENV
