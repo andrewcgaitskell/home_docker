@@ -32,7 +32,7 @@ def mqtt_on_message(client, userdata, msg):
 client = mqtt.Client(transport='websockets')
 client.on_connect = mqtt_on_connect
 client.on_message = mqtt_on_message
-client.connect('mosquitto', 8080, 60)
+client.connect('mosquitto_container', 8080, 60)
 #client.subscribe("myroom")
 
 # Blocking call that processes network traffic, dispatches callbacks and
