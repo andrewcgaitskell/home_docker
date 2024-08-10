@@ -17,8 +17,8 @@ podman rm mosquitto_container
 podman stop dash_container
 podman rm dash_container
 
-podman pod stop pod_home
-podman pod rm pod_home
+podman pod stop home_pod
+podman pod rm home_pod
 
 uid=${ENV_UID} ##1001
 gid=${ENV_GID} ##1002
