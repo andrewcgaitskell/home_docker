@@ -85,6 +85,7 @@ podman create \
 --pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
+-v /home_podman/dash:/workdir:Z \
 localhost/dash_image:latest
 
 podman start home_pod
