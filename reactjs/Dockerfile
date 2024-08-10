@@ -23,11 +23,11 @@ RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 
 RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app
 
-COPY package.json /app/package.json
+COPY package.json /app/node_modules/package.json
 COPY ./src/ /app/src
 COPY ./public/ /app/public
 
-RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/package.json
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/node_modules/package.json
 RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/src
 RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/public
 RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/node_modules
