@@ -55,5 +55,5 @@ RUN /env/bin/pip3 freeze
 
 EXPOSE 8888
 
-CMD ["jupyter", "notebook", "--notebook-dir=/notebooks",  "--port=8888", "--no-browser", "--ip=0.0.0.0"]
+CMD ["jupyter", "notebook", "--notebook-dir=/notebooks", "--token=podman",  "--port=8888", "--no-browser", "--ip=0.0.0.0"]
 
