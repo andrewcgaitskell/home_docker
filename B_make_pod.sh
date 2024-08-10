@@ -88,7 +88,6 @@ podman create \
 -v /home_podman/dash:/workdir:Z \
 localhost/dash_image:latest
 
-podman start home_pod
 podman start mariadb_container
 podman start jupyter_container
 podman start reactjs_container
