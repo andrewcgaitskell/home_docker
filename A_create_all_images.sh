@@ -3,11 +3,6 @@
 # remember to copy the .env file into create before running this
 
 cp .env /home_podman/mariadb/.env
-##cp ./.env ../fastapi_data/app/.env
-##cp ./.env ../fastapi_about/app/.env
-##cp ./.env ../application/app/.env
-##cp ./.env ../application/app/baseapp/.env
-##cp ./.env ../backup_db/.env
 
 ## set the variables for the containers
 source setenv.sh
