@@ -34,7 +34,7 @@ USER ${ENV_USER_UID}:${ENV_USER_GID}
 
 RUN npm install
 
-RUN ncu -u
+RUN npm update -g
 
 #ENV CI=true
 ENV PORT=4000
