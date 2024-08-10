@@ -28,8 +28,8 @@ RUN apt-get -y install unzip
 #RUN echo ${ENV_UID}
 
 # Create the user
-RUN echo groupadd --gid ${ENV_USER_GID} ${ENV_USER_GROUPNAME}
-RUN groupadd --gid ${ENV_USER_GID} ${ENV_USER_GROUPNAME}
+# RUN echo groupadd --gid ${ENV_USER_GID} ${ENV_USER_GROUPNAME}
+# RUN groupadd --gid ${ENV_USER_GID} ${ENV_USER_GROUPNAME}
 RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 
