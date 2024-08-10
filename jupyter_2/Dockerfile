@@ -10,6 +10,8 @@ ENV ENV_USER_UID=$BUILD_ENV_UID
 ENV ENV_USER_GID=$BUILD_ENV_GID 
 ENV ENV_USER_GROUPNAME=$BUILD_ENV_GROUPNAME
 
+ENV JUPYTER_TOKEN=podman
+
 RUN apt-get update && apt-get -y install vim
 RUN apt-get -y install unzip
 
@@ -55,5 +57,5 @@ RUN /env/bin/pip3 freeze
 
 EXPOSE 8888
 
-CMD ["jupyter", "notebook", "--notebook-dir=/notebooks", "--token=podman",  "--port=8888", "--no-browser", "--ip=0.0.0.0"]
+CMD ["jupyter", "notebook", "--notebook-dir=/notebooks",  "--port=8888", "--no-browser", "--ip=0.0.0.0"]
 
