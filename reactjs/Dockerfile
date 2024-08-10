@@ -34,13 +34,13 @@ RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/node_modules
 
 USER ${ENV_USER_UID}:${ENV_USER_GID}
 
-RUN npm install --prefix  /app/node_modules
+RUN npm install --prefix /app /app/node_modules/package.json
 
-RUN npm update --prefix  /app/node_modules
+RUN npm update --prefix /app /app/node_modules/package.json
 
 #ENV CI=true
 ENV PORT=4000
 
 ## CMD [ "npm", "start" ]
-CMD ["npm", "--prefix",  "/app","start"]
+CMD ["npm", "--prefix",  "/app", "start"]
 
