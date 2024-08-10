@@ -2,25 +2,26 @@
 
 source setenv.sh
 
-podman stop container_redis_1
-podman rm container_redis_1
 
 podman volume rm redis-data
 
-podman stop container_mariadb
-podman rm container_mariadb
+podman stop mariadb_container
+podman rm mariadb_container
 
-podman stop container_fastapi_data_1
-podman rm container_fastapi_data_1
+podman stop jupyter_container
+podman rm jupyter_container
 
-podman stop container_fastapi_about_1
-podman rm container_fastapi_about_1
+podman stop reactjs_container
+podman rm reactjs_container
 
-podman stop container_application_1
-podman rm container_application_1
+podman stop mosquitto_container
+podman rm mosquitto_container
 
-podman pod stop pod_main_backend
-podman pod rm pod_main_backend
+podman stop dash_container
+podman rm dash_container
+
+podman pod stop pod_home
+podman pod rm pod_home
 
 uid=${ENV_UID} ##1001
 gid=${ENV_GID} ##1002
@@ -32,8 +33,8 @@ subgidSize=$(( $(podman info --format "{{ range \
 
 
 podman pod create \
---name pod_main_backend \
---infra-name infra_main_backend \
+--name home_pod \
+--infra-name infra_home_pod \
 --network bridge \
 --uidmap 0:1:$uid \
 --uidmap $uid:0:1 \
@@ -41,62 +42,57 @@ podman pod create \
 --gidmap 0:1:$gid \
 --gidmap $gid:0:1 \
 --gidmap $(($gid+1)):$(($gid+1)):$(($subgidSize-$gid)) \
---publish 8010:8010 \
---publish 8014:8014 \
---publish 8016:8016 \
+--publish 9000:9000 \
 --publish 3306:3306 \
---publish 6379
+--publish 8888:8888 \
+--publish 4000:4000 \
+--publish 1883:1883 \
+--publish 8080:8080 \
+--publish 5015:5015
 
-podman volume create redis-data
-
-podman create \
---name container_redis_1 \
---pod pod_main_backend \
---user $uid:$gid \
---volume redis-data:/data \
-localhost/redis_1:latest
-
-rm -rf /data/containers/data/mysql
-mkdir /data/containers/data/mysql
+rm -rf /home_data/mysql
+mkdir /home_data/mysql
 
 podman create \
---name container_mariadb \
---pod pod_main_backend \
+--name mariadb_container \
+--pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
---volume /data/containers/data/mysql:/var/lib/mysql:z \
---volume /data/containers/data/backups:/data/backups:z \
-localhost/mariadb_1:latest
-
-rm -rf /opt/dmtools/code/dmtools/basecode/fastapi_data/app/migrations/
-rm -rf /opt/dmtools/code/dmtools/basecode/fastapi_about/app/migrations/
+--volume /home_data/mysql:/var/lib/mysql:z \
+localhost/mariadb_image:latest
 
 podman create \
---name container_fastapi_data_1 \
---pod pod_main_backend \
+--name jupyter_container \
+--pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
--v /opt/dmtools/code/dmtools/basecode:/workdir:Z \
-localhost/fastapi_data_1:latest
+-v /home_data/notebooks:/notebooks:Z \
+localhost/jupyter_image:latest
 
 podman create \
---name container_fastapi_about_1 \
---pod pod_main_backend \
+--name reactjs_container \
+--pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
--v /opt/dmtools/code/dmtools/basecode:/workdir:Z \
-localhost/fastapi_about_1:latest
+localhost/reactjs_image:latest
 
 podman create \
---name container_application_1 \
---pod pod_main_backend \
+--name mosquitto_container \
+--pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
--v /opt/dmtools/code/dmtools/basecode:/workdir:Z \
-localhost/application_1:latest
+localhost/mosquitto_image:latest
 
-podman start infra_main_backend
-podman start container_mariadb
-podman start container_redis_1
-podman start container_fastapi_about_1
-podman start container_fastapi_data_1
+podman create \
+--name dash_container \
+--pod home_pod \
+--user $uid:$gid \
+--log-opt max-size=10mb \
+localhost/dash_image:latest
+
+podman start home_pod
+podman start mariadb_container
+podman start jupyter_container
+podman start reactjs_container
+podman start mosquitto_container
+podman start dash_container
