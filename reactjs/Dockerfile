@@ -42,5 +42,5 @@ RUN npm update --prefix  /app/node_modules
 ENV PORT=4000
 
 ## CMD [ "npm", "start" ]
-CMD ["npm", "--prefix /app/node_modules","run", "build"]
+CMD ["npm", "--prefix",  "/app/node_modules","start"]
 
