@@ -22,16 +22,19 @@ RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 
 RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app
 
-USER ${ENV_USER_UID}:${ENV_USER_GID}
-
 COPY package.json /app/package.json
+COPY ./src/ /app/src
+COPY ./public/ /app/public
+
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/package.json
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/src
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/public
+
+USER ${ENV_USER_UID}:${ENV_USER_GID}
 
 RUN npm install
 
-RUN npm audit fix --force
-
-COPY ./src/ /app/src
-COPY ./public/ /app/public
+RUN ncu -u
 
 #ENV CI=true
 ENV PORT=4000
