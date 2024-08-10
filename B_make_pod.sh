@@ -2,9 +2,6 @@
 
 source setenv.sh
 
-
-podman volume rm redis-data
-
 podman stop mariadb_container
 podman rm mariadb_container
 
