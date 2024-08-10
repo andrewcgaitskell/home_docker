@@ -34,9 +34,9 @@ RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app/node_modules
 
 USER ${ENV_USER_UID}:${ENV_USER_GID}
 
-RUN npm install --prefix /app /app/node_modules/package.json
+RUN npm install --prefix /app /app/node_modules
 
-RUN npm update --prefix /app /app/node_modules/package.json
+RUN npm update --prefix /app /app/node_modules
 
 #ENV CI=true
 ENV PORT=4000
