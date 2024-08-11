@@ -1,6 +1,16 @@
 # Stage 1: Build Stage
 FROM node:18-alpine AS build
 
+ARG BUILD_ENV_USERNAME
+ARG BUILD_ENV_UID
+ARG BUILD_ENV_GID 
+ARG BUILD_ENV_GROUPNAME
+
+ENV ENV_USERNAME=$BUILD_ENV_USERNAME
+ENV ENV_USER_UID=$BUILD_ENV_UID
+ENV ENV_USER_GID=$BUILD_ENV_GID 
+ENV ENV_USER_GROUPNAME=$BUILD_ENV_GROUPNAME
+
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
@@ -9,14 +19,29 @@ COPY . .
 # Stage 2: Runtime Stage
 FROM node:18-alpine
 
-RUN adduser -D -u 1001 appuser
+ARG BUILD_ENV_USERNAME
+ARG BUILD_ENV_UID
+ARG BUILD_ENV_GID 
+ARG BUILD_ENV_GROUPNAME
+
+ENV ENV_USERNAME=$BUILD_ENV_USERNAME
+ENV ENV_USER_UID=$BUILD_ENV_UID
+ENV ENV_USER_GID=$BUILD_ENV_GID 
+ENV ENV_USER_GROUPNAME=$BUILD_ENV_GROUPNAME
+
+RUN echo groupadd --gid ${ENV_USER_GID} ${ENV_USERNAME}
+RUN groupadd --gid ${ENV_USER_GID} ${ENV_USERNAME}
+RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
+RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
+
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app
 
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app ./
-RUN chown -R appuser:appuser /usr/src/app
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /usr/src/app
 
-USER appuser
+USER ${ENV_USER_UID}:${ENV_USER_GID}
 
 EXPOSE 3000
 CMD ["npm", "start"]
