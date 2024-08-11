@@ -5,7 +5,7 @@ WORKDIR /usr/src
 #COPY package*.json ./
 #RUN npm install
 #COPY . .
-RUN npm cache clean -f
+RUN npm cache clean --force
 RUN npm install -g n
 RUN n stable
 RUN npm install -g npm@10.8.2
