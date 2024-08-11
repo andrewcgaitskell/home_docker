@@ -24,9 +24,11 @@ WORKDIR /usr/src/app
 #COPY --from=localhost/reactjs_image_root /usr/src/app/node_modules ./node_modules
 #COPY --from=localhost/reactjs_image_root /usr/src/app ./
 
-#RUN ls -Ral /usr/src/app
+RUN chown -R ENV_USER_UID:ENV_USER_GID /usr/src/app
 
-#USER node
+RUN ls -Ral /usr/src/app
+
+USER ENV_USER_UID:ENV_USER_GID
 
 EXPOSE 3000
 CMD ["npm", "start"]
