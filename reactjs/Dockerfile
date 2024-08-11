@@ -16,9 +16,11 @@ ENV ENV_USER_UID=$BUILD_ENV_UID
 ENV ENV_USER_GID=$BUILD_ENV_GID 
 ENV ENV_USER_GROUPNAME=$BUILD_ENV_GROUPNAME
 
-WORKDIR /usr/src/app
+WORKDIR /usr
 
-RUN npx create-next-app@latest
+## RUN npx create-next-app@latest
+RUN npx create-next-app@latest reactjs --use-npm --typescript --eslint --app --src-dir --no-tailwind
+RUN ls -al
 # COPY . .
 
 # Stage 2: Runtime Stage
@@ -41,10 +43,10 @@ RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 
 RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app
 
-WORKDIR /usr/src/app
-COPY --from=build /usr/src/app/node_modules ./node_modules
-COPY --from=build /usr/src/app ./
-RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /usr/src/app
+WORKDIR /usr/reactjs/src/app
+COPY --from=build /usr/reactjs/src/app/node_modules ./node_modules
+COPY --from=build /usr/reactjs/src/app ./
+RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /usr/reactjs/src/app
 
 USER ${ENV_USER_UID}:${ENV_USER_GID}
 
