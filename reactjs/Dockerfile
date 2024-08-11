@@ -5,11 +5,11 @@ WORKDIR /usr/src
 #COPY package*.json ./
 #RUN npm install
 #COPY . .
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-sudo npm install -g npm@10.8.2
-sudo npx create-react-app app
+RUN sudo npm cache clean -f
+RUN sudo npm install -g n
+RUN sudo n stable
+RUN sudo npm install -g npm@10.8.2
+RUN sudo npx create-react-app app
 
 # Stage 2: Runtime Stage
 FROM node:22.6-bookworm
