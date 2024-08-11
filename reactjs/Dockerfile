@@ -20,7 +20,7 @@ WORKDIR /usr
 
 ## RUN npx create-next-app@latest
 RUN npx create-next-app@latest reactjs --use-npm --typescript --eslint --app --src-dir --no-tailwind
-RUN ls -Ral
+RUN ls -Ral /usr/reactjs
 # COPY . .
 
 # Stage 2: Runtime Stage
