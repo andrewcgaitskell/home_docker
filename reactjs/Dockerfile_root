@@ -11,3 +11,6 @@ RUN n stable
 RUN npm install -g npm@10.8.2
 RUN npx create-react-app app
 
+EXPOSE 3000
+CMD ["npm", "start"]
+
