@@ -3,7 +3,7 @@ ARG BUILD_ENV_UID
 ARG BUILD_ENV_GID 
 ARG BUILD_ENV_GROUPNAME
 
-FROM node:22.6-bookworm
+FROM localhost/reactjs_image_root
 
 ARG BUILD_ENV_USERNAME
 ARG BUILD_ENV_UID
@@ -21,8 +21,8 @@ RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 
 WORKDIR /usr/src/app
-COPY --from=build_root /usr/src/app/node_modules ./node_modules
-COPY --from=build_root /usr/src/app ./
+#COPY --from=localhost/reactjs_image_root /usr/src/app/node_modules ./node_modules
+#COPY --from=localhost/reactjs_image_root /usr/src/app ./
 
 #RUN ls -Ral /usr/src/app
 
