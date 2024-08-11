@@ -1,5 +1,5 @@
 # Stage 1: Build Stage
-FROM node:22.6-bookworm as build_root
+FROM node:22.6-bookworm
 
 WORKDIR /usr/src
 #COPY package*.json ./
