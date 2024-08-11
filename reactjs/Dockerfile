@@ -17,11 +17,10 @@ FROM node:22.6-bookworm
 WORKDIR /usr/src/app
 COPY --from=build_root /usr/src/app/node_modules ./node_modules
 COPY --from=build_root /usr/src/app ./
-RUN chown -R appuser:appuser /usr/src/app
 
-RUN ls -Ral /usr/src/app
+#RUN ls -Ral /usr/src/app
 
-USER node
+#USER node
 
 EXPOSE 3000
 CMD ["npm", "start"]
