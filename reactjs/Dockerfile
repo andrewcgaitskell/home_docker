@@ -20,7 +20,7 @@ WORKDIR /usr
 
 ## RUN npx create-next-app@latest
 RUN npx create-next-app@latest reactjs --use-npm --typescript --eslint --app --src-dir --no-tailwind
-RUN ls -al
+RUN ls -Ral
 # COPY . .
 
 # Stage 2: Runtime Stage
@@ -40,8 +40,6 @@ RUN echo groupadd --gid ${ENV_USER_GID} ${ENV_USERNAME}
 RUN groupadd --gid ${ENV_USER_GID} ${ENV_USERNAME}
 RUN echo useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
 RUN useradd --uid ${ENV_USER_UID} --gid ${ENV_USER_GID} -m ${ENV_USERNAME}
-
-RUN chown -R ${ENV_USER_UID}:${ENV_USER_GID} /app
 
 WORKDIR /usr/reactjs/src/app
 COPY --from=build /usr/reactjs/src/app/node_modules ./node_modules
