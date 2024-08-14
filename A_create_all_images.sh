@@ -2,18 +2,18 @@
 
 # remember to copy the .env file into create before running this
 
-cp .env /home_podman/mariadb/.env
+cp .env /home/home_user/Code/home_podman/mariadb/.env
 
 ## set the variables for the containers
 source setenv.sh
-source /home_podman/mariadb/createinitsql.sh
+source /home/home_user/Code/home_podman/mariadb/createinitsql.sh
 
 ## mariadb image
 
-cd /home_podman/mariadb
+cd /home/home_user/Code/home_podman/mariadb
 
-rm -rf /home_data/mariadb
-mkdir /home_data/mariadb
+rm -rf /home/home_user/home_data/mariadb
+mkdir /home/home_user/home_data/mariadb
 
 podman stop mariadb_container
 podman rm mariadb_container
@@ -34,7 +34,7 @@ podman build \
 
 ## Jupyter
 
-cd /home_podman/jupyter_2
+cd /home/home_user/Code/home_podman/jupyter_2
 
 podman stop jupyter_container
 podman rm jupyter_container
@@ -48,7 +48,7 @@ podman build \
 --build-arg=BUILD_ENV_GROUPNAME=${ENV_GROUPNAME} \
 -f Dockerfile -t jupyter_image
 
-cd /home_podman/reactjs
+cd /home/home_user/Code/home_podman/reactjs
 
 podman stop reactjs_container
 podman rm reactjs_container
@@ -68,7 +68,7 @@ podman build \
 
 ## mosquitto image
 
-cd /home_podman/mosquitto
+cd /home/home_user/Code/home_podman/mosquitto
 
 podman stop mosquitto_container
 podman rm mosquitto_container
@@ -84,7 +84,7 @@ podman build \
 
 ## dash image
 
-cd /home_podman/dash
+cd /home/home_user/Code/home_podman/dash
 
 podman stop dash_container
 podman rm dash_container
