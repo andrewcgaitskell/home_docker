@@ -42,6 +42,7 @@ podman pod create \
 --publish 9000:9000 \
 --publish 3306:3306 \
 --publish 8888:8888 \
+--publish 3000:3000 \
 --publish 4000:4000 \
 --publish 1883:1883 \
 --publish 8080:8080 \
