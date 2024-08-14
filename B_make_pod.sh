@@ -55,7 +55,7 @@ podman create \
 --pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
---volume /home_data/mysql:/var/lib/mysql:z \
+--volume /home/home_user/home_data/mysql:/var/lib/mysql:z \
 localhost/mariadb_image:latest
 
 podman create \
@@ -63,7 +63,7 @@ podman create \
 --pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
--v /home_data/notebooks:/notebooks:Z \
+-v /home/home_user/home_data/notebooks:/notebooks:Z \
 localhost/jupyter_image:latest
 
 podman create \
@@ -85,7 +85,7 @@ podman create \
 --pod home_pod \
 --user $uid:$gid \
 --log-opt max-size=10mb \
--v /home_podman/dash:/workdir:Z \
+-v /home/home_user/Code/home_podman/dash:/workdir:Z \
 localhost/dash_image:latest
 
 podman start mariadb_container
