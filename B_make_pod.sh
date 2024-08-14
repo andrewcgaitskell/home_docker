@@ -47,8 +47,10 @@ podman pod create \
 --publish 8080:8080 \
 --publish 5015:5015
 
-rm -rf /home_data/mysql
-mkdir /home_data/mysql
+rm -rf /home/home_user/home_data/mysql
+mkdir /home/home_user/home_data/mysql
+
+
 
 podman create \
 --name mariadb_container \
