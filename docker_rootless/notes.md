@@ -1,3 +1,7 @@
+# Important
+
+DO NOT USE ROOTLESS DOCKER!
+
 # Installation
 
 https://docs.docker.com/engine/security/rootless/
