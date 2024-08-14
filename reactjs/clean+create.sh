@@ -5,6 +5,7 @@ podman rm reactjs_container
 
 podman rmi reactjs_image_root
 podman rmi reactjs_image_user
+podman rmi reactjs_image
 
 podman build \
 -f Dockerfile_root -t reactjs_image
