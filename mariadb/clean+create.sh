@@ -1,9 +1,9 @@
 ## mariadb image
 
-cd /home_podman/mariadb
+cd /home/home_user/Code/home_podman/mariadb
 
-rm -rf /home_data/mariadb
-mkdir /home_data/mariadb
+rm -rf /home/home_user/home_data/mariadb
+mkdir /home/home_user/home_data/mariadb
 
 podman stop mariadb_container
 podman rm mariadb_container
