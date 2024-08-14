@@ -72,7 +72,7 @@ localhost/jupyter_image:latest
 podman create \
 --name reactjs_container \
 --pod home_pod \
---user $uid:$gid \
+## --user $uid:$gid \
 --log-opt max-size=10mb \
 localhost/reactjs_image:latest
 
