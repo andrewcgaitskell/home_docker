@@ -9,6 +9,8 @@ podman stop mariadb_container
 podman rm mariadb_container
 podman rmi mariadb_image
 
+source createinitsql.sh
+
 podman build \
 --build-arg=BUILD_ENV_UID=${ENV_UID} \
 --build-arg=BUILD_ENV_USERNAME=${ENV_USERNAME} \
